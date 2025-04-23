@@ -1,0 +1,35 @@
+<h3>
+  Customer list
+</h3>
+
+<div *ngFor="let customer of customers" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
+  <div>
+    {{customer.surname}}
+    {{customer.name}}
+  </div>
+  <div class="ms-auto">
+    <button matt-icon-button [routerLink]="'/clients/edit/' + customer._id">
+      <mat-icon>
+        edit
+      </mat-icon>
+    </button>
+    <button matt-icon-button [routerLink] = "'/clients/details/' + customer._id">
+      <mat-icon>
+        visibility
+      </mat-icon>
+    </button>
+    <button matt-icon-button color = "warn" (click)="onDeleteClick(customer)">
+      <mat-icon>
+        cancel
+      </mat-icon>
+    </button>
+  </div>
+</div>
+<div class="buttons">
+  <button mat-raised-button color="primary" [routerLink]="'/clients/create'">
+    Create new customer
+  </button>
+  <button mat-raised-button color = "primary" [routerLink]="'/'">
+   Back to home
+  </button>
+</div>

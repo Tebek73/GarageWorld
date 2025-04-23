@@ -1,0 +1,62 @@
+<h3>
+  Complete the details below to add a part to the list
+</h3>
+
+<div class="mat-elevation-z2 p-2">
+  <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+    <mat-form-field apperance="outline" class="w-100">
+      <mat-label> Fill the name</mat-label>
+      <input matInput placeholder="engine" formControlName = "name">
+      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
+      <mat-hint> Hint</mat-hint>
+    </mat-form-field>
+
+
+
+    <mat-form-field apperance="outline" class="w-100">
+      <mat-label> Fill the partNumber</mat-label>
+      <input matInput placeholder="z9C300" formControlName = "partNumber">
+      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
+      <mat-hint> Hint</mat-hint>
+    </mat-form-field>
+
+
+
+    <mat-form-field apperance="outline" class="w-100">
+      <mat-label> Fill the manufacturer</mat-label>
+      <input matInput placeholder="VW" formControlName = "manufacturer">
+      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
+      <mat-hint> Hint</mat-hint>
+    </mat-form-field>
+
+
+
+    <mat-form-field apperance="outline" class="w-100">
+      <mat-label> Fill the stock</mat-label>
+      <input matInput placeholder="999" formControlName = "stock">
+      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
+      <mat-hint> Hint</mat-hint>
+    </mat-form-field>
+
+
+    <mat-form-field apperance="outline" class="w-100">
+      <mat-label> Fill the price</mat-label>
+      <input matInput placeholder="300" formControlName = "price">
+      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
+      <mat-hint> Hint</mat-hint>
+    </mat-form-field>
+
+
+    <button mat-raised-button type="submit" color="primary">
+     Save
+    </button>
+    <button mat-raised-button type="reset">
+      Cancel
+   </button>
+    <button mat-raised-button color = "primary" [routerLink] = "'/parts'">
+      Back to list
+    </button>
+  </form>
+</div>
+
+

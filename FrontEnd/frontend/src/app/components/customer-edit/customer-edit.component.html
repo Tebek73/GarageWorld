@@ -1,0 +1,49 @@
+<h3>
+  Edit customer
+</h3>
+
+<div class = "mat-elevation-z2 p-2 spacingUpDown">
+  <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+
+    <mat-form-field appearance="outline" class="w-100 ">
+      <mat-label>Fill the surname</mat-label>
+      <input matInput placeholder="Doe" formControlName = "surname">
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100 ">
+        <mat-label>Fill the name</mat-label>
+        <input matInput placeholder="John" formControlName = "name">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100 ">
+        <mat-label>Fill the email</mat-label>
+        <input matInput placeholder="johndoe@gmail.com" formControlName = "email">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100 ">
+        <mat-label>Fill the phone</mat-label>
+        <input matInput placeholder="+77 777 777 777" formControlName = "phone">
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-hint>Use country prefix please</mat-hint>
+      </mat-form-field>
+
+      <div class = "buttons">
+        <button mat-raised-button type="submit" >
+          Save
+        </button>
+
+        <button mat-raised-button type="reset" >
+          Cancel
+        </button>
+
+        <button  mat-raised-button color="primary" [routerLink] = "'/clients'">
+          Back to list
+        </button>
+      </div>
+  </form>
+</div>
+
+

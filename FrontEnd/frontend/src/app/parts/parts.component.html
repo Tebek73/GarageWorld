@@ -1,0 +1,29 @@
+<h3>
+  Service part list
+</h3>
+
+<div *ngFor="let part of parts" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
+  <div>
+    {{part.name}}
+    {{part.partNumber}}
+    {{part.manufacturer}}
+    {{part.stock}}
+    {{part.price}}
+  </div>
+  <div class = "ms-auto">
+    <button matt-icon-button [routerLink]="'/parts/edit/' + part._id">
+      <mat-icon>edit</mat-icon >
+    </button>
+    <button matt-icon-button color = "warn" (click)="onDeleteClick(part)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
+
+<button mat-raised-button color = "primary" [routerLink] = "'/parts/create'">
+  Add part to list
+</button>
+
+<button mat-raised-button color="primary" [routerLink] = "'/'">
+  Back to home
+</button>

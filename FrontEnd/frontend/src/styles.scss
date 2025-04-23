@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+ }
+body {
+   margin: 5;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+.general {
+  background-color: rgb(48, 48, 48);
+}
+
+h1{
+  font-weight: bold;
+  text-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+
+}
+
+
+h3 {
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+
+
+}
+
+.spacingUpDown {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.spacingLeftRight {
+  margin-left: 10px;
+  margin-right: 10px;
+}

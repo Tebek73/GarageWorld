@@ -1,0 +1,44 @@
+<form [formGroup]="carForm" (ngSubmit)="submitForm()" class="car-form">
+  <div class="form-group">
+    <label>Registration Number</label>
+    <input formControlName="registrationNumber" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Chassis Series</label>
+    <input formControlName="chassisSeries" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Brand</label>
+    <input formControlName="brand" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Model</label>
+    <input formControlName="model" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Year of Manufacture</label>
+    <input formControlName="yearOfManufacture" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Engine Type</label>
+    <select formControlName="engineType" class="form-control">
+      <option value="benzina">Benzina</option>
+      <option value="diesel">Diesel</option>
+      <option value="hibrid">Hibrid</option>
+      <option value="electric">Electric</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Engine Capacity</label>
+    <input formControlName="engineCapacity" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Horsepower</label>
+    <input formControlName="horsepower" type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>kW</label>
+    <input formControlName="kw" type="number" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success mt-3">Add Car</button>
+</form>
