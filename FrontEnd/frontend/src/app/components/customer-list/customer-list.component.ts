@@ -4,8 +4,10 @@ import { RouterModule } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
 import { Customer } from '../../models/customer.model';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon'
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule} from '@angular/material/sort';
 @Component({
   selector: 'app-customer-list',
   standalone: true,
@@ -13,7 +15,10 @@ import { MatIconModule } from '@angular/material/icon'
     MatButtonModule,
     RouterModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    //MatTableModule,
+    //MatPaginatorModule,
+    //MatSortModule
   ],
   templateUrl: './customer-list.component.html',
   styleUrl: './customer-list.component.scss'
@@ -33,7 +38,7 @@ export class CustomerListComponent implements OnInit {
   initData(): void{
     this.customerService.get().subscribe(
       (data: Customer[]) => {
-        console.log('customers:',data);
+        //console.log('customers:',data);
         this.customers = data;
       },
       (error: unknown) => {

@@ -1,4 +1,5 @@
 const Customer = require('../models/Customer');
+const Car = require('../models/Car');
 
 const getAllCustomers = async (req, res) => {
     try {
@@ -9,6 +10,17 @@ const getAllCustomers = async (req, res) => {
         res.status(500).json({ message: "An error occurred", error: error });
     }
 };
+
+const getCarsOfCustomers = async (req,res) => {
+    try {
+        const customerId = req.params.id;
+        const cars = await Car.find({ ownerId: customerId });
+        res.status(200).json(cars);
+    }
+    catch(error){
+        res.status(500).json({ message: "An error occured", error: error});
+    }
+}
 
 const getById = async (req, res) => {
     try {
@@ -67,6 +79,7 @@ const deleteById = async (req, res) => {
 
 module.exports = {
     getAllCustomers,
+    getCarsOfCustomers,
     create,
     update,
     getById,

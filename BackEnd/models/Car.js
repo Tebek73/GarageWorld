@@ -29,14 +29,14 @@ const CarSchema = mongoose.Schema(
         },
         engineType:{
             type: String,
-            enum: ['diesel','benzina','hibrid','electric'],
+            enum: ['motorina','benzina','hibrid','electric'],
             required: true
         },
         engineCapacity:{
             type: Number,
             required: true
         },
-        horsepower:{ // TINE MINTE SA FACI FUNCTIE CARE CONVERTESTE IN KW PUTERE !!!!!!!!!!!!!!!!!!!!!!!!!!
+        horsepower:{ 
             type: Number,
             required: true
         },

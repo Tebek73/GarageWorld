@@ -1,14 +1,17 @@
 <h3>
-  Customer list
+  Lista clienti:
 </h3>
 
 <div *ngFor="let customer of customers" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
+
   <div>
-    {{customer.surname}}
-    {{customer.name}}
+    <label class = "fw-bold"> Nume: </label> {{customer.surname}}
+    <label class = "fw-bold"> Prenume: </label> {{customer.name}}
+    <label class = "fw-bold"> Telefon: </label> {{customer.phone}}
+    <label class = "fw-bold"> Email: </label> {{customer.email}}
   </div>
-  <div class="ms-auto">
-    <button matt-icon-button [routerLink]="'/clients/edit/' + customer._id">
+  <div class="ms-auto" >
+    <button matt-icon-button  [routerLink]="'/clients/edit/' + customer._id">
       <mat-icon>
         edit
       </mat-icon>
@@ -20,16 +23,16 @@
     </button>
     <button matt-icon-button color = "warn" (click)="onDeleteClick(customer)">
       <mat-icon>
-        cancel
+        delete
       </mat-icon>
     </button>
   </div>
 </div>
 <div class="buttons">
   <button mat-raised-button color="primary" [routerLink]="'/clients/create'">
-    Create new customer
+    Adauga client
   </button>
   <button mat-raised-button color = "primary" [routerLink]="'/'">
-   Back to home
+    Inapoi
   </button>
 </div>

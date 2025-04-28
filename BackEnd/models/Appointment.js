@@ -38,7 +38,7 @@ const AppointmentSchema = new mongoose.Schema({
         ];
         return allowedTimes.includes(val);
       },
-      message: 'Ora de start trebuie sa fie din intervalul 08:00 - 17:00, din 30 in 30 de minute.'
+      message: 'Ora programarii trebuie sa fie din intervalul 08:00 - 17:00, din 30 in 30 de minute.'
     }
   },
   status: {

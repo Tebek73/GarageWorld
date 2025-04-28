@@ -1,14 +1,14 @@
 <h3>
-  Service part list
+  Lista piese service:
 </h3>
 
 <div *ngFor="let part of parts" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
   <div>
-    {{part.name}}
-    {{part.partNumber}}
-    {{part.manufacturer}}
-    {{part.stock}}
-    {{part.price}}
+    <label class="fw-bold">Piesa:</label> {{part.name}}
+    <label class="fw-bold">Serie:</label> {{part.partNumber}}
+    <label class="fw-bold">Producator:</label> {{part.manufacturer}}
+    <label class="fw-bold">Stock:</label> {{part.stock}}
+    <label class="fw-bold">Pret:</label> {{part.price}}
   </div>
   <div class = "ms-auto">
     <button matt-icon-button [routerLink]="'/parts/edit/' + part._id">
@@ -20,10 +20,12 @@
   </div>
 </div>
 
-<button mat-raised-button color = "primary" [routerLink] = "'/parts/create'">
-  Add part to list
-</button>
+<div class="buttons">
+  <button mat-raised-button color = "primary" [routerLink] = "'/parts/create'">
+    Adauga
+  </button>
 
-<button mat-raised-button color="primary" [routerLink] = "'/'">
-  Back to home
-</button>
+  <button mat-raised-button color="primary" [routerLink] = "'/'">
+    Inapoi
+  </button>
+</div>

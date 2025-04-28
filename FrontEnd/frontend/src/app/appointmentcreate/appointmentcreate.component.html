@@ -1,1 +1,84 @@
-<p>appointmentcreate works!</p>
+<h3>
+  Adauga programare:
+</h3>
+
+<div class = "mat-elevation-z2 p-2">
+
+  <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <mat-label> Selecteaza client </mat-label>
+      <mat-select formControlName = "customer">
+        <mat-option *ngFor="let customer of customers" [value] = "customer._id">
+          {{ customer.name}} {{ customer.surname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Selecteaza masina  </mat-label>
+      <mat-select formControlName = "car">
+        <mat-option *ngFor = "let car of cars" [value]="car._id">
+          {{ car.brand }} {{car.model}} {{car.registrationNumber}}
+        </mat-option>
+      </mat-select>
+      <mat-hint *ngIf="cars.length===0"> Select a customer first</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Metoda contact </mat-label>
+      <mat-select formControlName = "contactMethod">
+        <mat-option value="email">Email</mat-option>
+        <mat-option value="telefon">Telefonic</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descriere</mat-label>
+      <input matInput placeholder="Ce actiuni se vor desfasura?" formControlName="actionDescription">
+    </mat-form-field>
+
+    <mat-form-field appearance = "fill">
+      <mat-label>Data programarii</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName = "date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ora programare</mat-label>
+      <mat-select formControlName="startHour">
+        <mat-option value="8:00">8:00</mat-option>
+        <mat-option value="8:30">8:30</mat-option>
+        <mat-option value="9:00">9:00</mat-option>
+        <mat-option value="9:30">9:30</mat-option>
+        <mat-option value="10:00">10:00</mat-option>
+        <mat-option value="10:30">10:30</mat-option>
+        <mat-option value="11:00">11:00</mat-option>
+        <mat-option value="11:30">11:30</mat-option>
+        <mat-option value="12:00">12:00</mat-option>
+        <mat-option value="12:30">12:30</mat-option>
+        <mat-option value="13:00">13:00</mat-option>
+        <mat-option value="13:30">13:30</mat-option>
+        <mat-option value="14:00">14:00</mat-option>
+        <mat-option value="14:30">14:30</mat-option>
+        <mat-option value="15:00">15:00</mat-option>
+        <mat-option value="15:30">15:30</mat-option>
+        <mat-option value="16:00">16:00</mat-option>
+        <mat-option value="16:30">16:30</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class = "buttons">
+      <button mat-raised-button type="submit" color="primary">
+        Adauga
+      </button>
+      <button mat-raised-button type="reset" color="primary">
+        Reseteaza
+        </button>
+      <button  mat-raised-button color="primary" [routerLink] = "'/appointments'">
+        Inapoi
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,39 +1,69 @@
 <h4>
-  Customer details:
+  Detalii client:
 </h4>
 
 
-<div *ngIf="customer">
-  <p>
-    <label class="fw-bold">
-      Surname:
-    </label>
-    {{customer.surname}}
-  </p>
-  <p>
-    <label class="fw-bold">
-      Name:
-    </label>
-    {{customer.name}}
-  </p>
-  <p>
-    <label class="fw-bold">
-      Email:
-    </label>
-    {{customer.email}}
-  </p>
-  <p>
-    <label class="fw-bold">
-      Phone:
-    </label>
-    {{customer.phone}}
-  </p>
+<div *ngIf="customer" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
+  <div>
+    <p>
+      <label class="fw-bold">
+        Nume:
+      </label>
+      {{customer.surname}}
+    </p>
+    <p>
+      <label class="fw-bold">
+        Prenume:
+      </label>
+      {{customer.name}}
+    </p>
+    <p>
+      <label class="fw-bold">
+        Email:
+      </label>
+      {{customer.email}}
+    </p>
+    <p>
+      <label class="fw-bold">
+        Telefon:
+      </label>
+      {{customer.phone}}
+    </p>
+  </div>
+
 
 
 </div>
 
-<div class = "d-flex justify-content-end">
+<div *ngIf="cars.length > 0" >
+  <h5>Lista masini:</h5>
+  <div *ngFor="let car of cars" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
+    <div>
+      <label class = "fw-bold"> Firma: </label>  {{car.brand}}
+      <label class = "fw-bold"> Model: </label>  {{car.model}}
+      <label class = "fw-bold"> An: </label>  {{car.yearOfManufacture}}
+      <label class = "fw-bold"> Inmatriculat: </label>  {{car.registrationNumber}}
+      <label class = "fw-bold"> Motor: </label>  {{car.engineType}}, {{car.engineCapacity}},CP: {{car.horsepower}}, KW: {{car.kw}}
+
+    </div>
+    <div class="ms-auto">
+      <button matt-icon-button color="primary" (click)="deleteCar(car._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="cars.length === 0">
+  <p>Nicio masina adaugata in lista.</p>
+</div>
+
+<div class = "buttons">
+  <button mat-raised-button color = "primary" [routerLink]="'/createcar/' + customerId">
+    Adauga o masina
+  </button>
   <button mat-raised-button color = "primary" [routerLink]="'/clients'">
-    Back to the list
+    Inapoi la lista
   </button>
 </div>

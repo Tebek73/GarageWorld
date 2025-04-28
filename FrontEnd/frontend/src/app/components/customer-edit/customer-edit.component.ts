@@ -42,7 +42,7 @@ export class CustomerEditComponent {
     this.form = new FormGroup({
       surname: new FormControl('',Validators.required),
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.email),
+      email: new FormControl('', [Validators.email, Validators.required]),
       phone: new FormControl('', Validators.required)
     });
 

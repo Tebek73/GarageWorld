@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Customer } from '../models/customer.model';
 import { Observable } from 'rxjs';
+import { Car } from '../models/car.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,10 @@ export class CustomerService {
 
   getById(id: string) : Observable<Customer> {
     return this.http.get<Customer>(this.api + "/" + id);
+  }
+
+  getCarsOf(id: string) : Observable<Car[]>{
+    return this.http.get<Car[]>(this.api + "/" +id + "/cars");
   }
 
   post(customer: Customer) : Observable<Customer>{

@@ -9,7 +9,8 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentcreateComponent } from './appointmentcreate/appointmentcreate.component';
 import { PartcreateComponent } from './partcreate/partcreate.component';
 import { ParteditComponent } from './partedit/partedit.component';
-import { AppointmenteditComponent } from './appointmentedit/appointmentedit.component';
+import { CarcreateComponent } from './carcreate/carcreate.component';
+import { ServicehistoryComponent } from '../servicehistory/servicehistory.component';
 
 export const routes: Routes = [
   {
@@ -43,8 +44,8 @@ export const routes: Routes = [
   },
 
   {
-    path:"appointments/edit/:id",
-    component: AppointmenteditComponent
+    path:"servicehistory/:id",
+    component: ServicehistoryComponent
   },
 
   {
@@ -65,6 +66,11 @@ export const routes: Routes = [
   {
     path: "clients/edit/:id",
     component: CustomerEditComponent
+  },
+
+  {
+    path: "createcar/:id",
+    component: CarcreateComponent
   }
 
 ];

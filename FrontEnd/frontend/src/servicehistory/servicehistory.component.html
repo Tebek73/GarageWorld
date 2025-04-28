@@ -1,0 +1,33 @@
+<h3>
+  Istoric procese service
+</h3>
+
+<div class="mat-elevation-z2 p-2 spacingUpDown" >
+  <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance = "outline" class = "w-100">
+      <mat-label>Informatii primire masina</mat-label>
+      <input matInput placeHolder = "Masina prezenta o defectiune la..." formControlName = "receptionNotes">
+    </mat-form-field>
+    <mat-form-field appearance = "outline" class = "w-100">
+      <mat-label>Operatii realizate asupra masinii</mat-label>
+      <input matInput placeHolder = "Schimbat x,y..." formControlName = "operationsPerformed">
+    </mat-form-field>
+    <mat-form-field appearance = "outline" class = "w-100">
+      <mat-label>Durata reparatiei</mat-label>
+      <input matInput placeHolder = "X ore, Y minute" formControlName = "durationMinutes">
+      <mat-hint>Doar numarul de minute! Doar Multiplu de 10!</mat-hint>
+    </mat-form-field>
+
+    <div class = "buttons">
+      <button mat-raised-button type="submit" >
+        Salveaza
+      </button>
+
+      <button  mat-raised-button color="primary" [routerLink] = "'/appointments'">
+        Inapoi
+      </button>
+    </div>
+
+  </form>
+</div>

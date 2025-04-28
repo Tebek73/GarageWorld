@@ -1,11 +1,18 @@
-import { Customer } from "./customer.model"
 
 export class Appointment{
   _id!: string;
-  customerId!: string;
-  carId!: string;
+  customer!: {
+    surname: string,
+    name: string
+  };
+  car!: {
+    registrationNumber: string,
+    brand: string,
+    model: string
+  };
   contactMethod!: string;
   actionDescription!: string;
+  date!: Date;
   startHour!: string;
   status!: string;
 }

@@ -1,10 +1,32 @@
-<div>
-  <h3>
-    Appointment list
-  </h3>
-</div>
+<h3>
+  Lista programari
+</h3>
 <div *ngFor = "let appointment of appointments" class="mat-elevation-z2p-2 my-2 d-flex align-items-center">
   <div>
-
+    <label class="fw-bold">Nume client:</label> {{appointment.customer?.surname}} {{appointment.customer?.name}}
+    <label class="fw-bold">Masina:</label> {{appointment.car?.brand}} {{appointment.car?.model}} {{appointment.car?.registrationNumber}}
+    <label class="fw-bold">Metoda contact:</label>  {{appointment.contactMethod}}
+    <label class="fw-bold">Data:</label> {{appointment.date}}
+    <label class="fw-bold">Ora:</label> {{appointment.startHour}}
   </div>
+  <div class="ms-auto" >
+    <button matt-icon-button color = "primary" [routerLink]="'/servicehistory/'+appointment._id">
+      <mat-icon>
+        history_edu
+      </mat-icon>
+    </button>
+    <button matt-icon-button color = "warn" (click)="onDeleteClick(appointment)">
+      <mat-icon>
+        delete
+      </mat-icon>
+    </button>
+  </div>
+</div>
+<div class="buttons">
+  <button mat-raised-button color="primary" [routerLink]="'/appointments/create'">
+    Adauga
+  </button>
+  <button mat-raised-button color = "primary" [routerLink]="'/'">
+    Inapoi
+  </button>
 </div>

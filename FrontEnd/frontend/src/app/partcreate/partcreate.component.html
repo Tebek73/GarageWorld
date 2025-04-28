@@ -1,61 +1,51 @@
 <h3>
-  Complete the details below to add a part to the list
+  Completeaza pentru a adauga o noua piesa in lista
 </h3>
 
 <div class="mat-elevation-z2 p-2">
   <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+
     <mat-form-field apperance="outline" class="w-100">
-      <mat-label> Fill the name</mat-label>
-      <input matInput placeholder="engine" formControlName = "name">
-      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
-      <mat-hint> Hint</mat-hint>
+      <mat-label>Denumire</mat-label>
+      <input matInput placeholder="motor" formControlName = "name">
     </mat-form-field>
 
-
-
     <mat-form-field apperance="outline" class="w-100">
-      <mat-label> Fill the partNumber</mat-label>
+      <mat-label>Serie</mat-label>
       <input matInput placeholder="z9C300" formControlName = "partNumber">
-      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
-      <mat-hint> Hint</mat-hint>
     </mat-form-field>
 
-
-
     <mat-form-field apperance="outline" class="w-100">
-      <mat-label> Fill the manufacturer</mat-label>
+      <mat-label>Producator</mat-label>
       <input matInput placeholder="VW" formControlName = "manufacturer">
-      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
-      <mat-hint> Hint</mat-hint>
     </mat-form-field>
 
-
-
     <mat-form-field apperance="outline" class="w-100">
-      <mat-label> Fill the stock</mat-label>
+      <mat-label>Stock</mat-label>
       <input matInput placeholder="999" formControlName = "stock">
-      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
-      <mat-hint> Hint</mat-hint>
+      <mat-hint>Doar numere!</mat-hint>
     </mat-form-field>
 
 
     <mat-form-field apperance="outline" class="w-100">
-      <mat-label> Fill the price</mat-label>
+      <mat-label>Pret</mat-label>
       <input matInput placeholder="300" formControlName = "price">
-      <mat-icon matSuffix> sentiment_very_satisfied</mat-icon>
-      <mat-hint> Hint</mat-hint>
+      <mat-hint>Doar numere!</mat-hint>
     </mat-form-field>
 
+    <div class="buttons">
+      <button mat-raised-button type="submit" color="primary">
+        Salveaza
+       </button>
+       <button mat-raised-button type="reset">
+        Reset
+      </button>
+       <button mat-raised-button color = "primary" [routerLink] = "'/parts'">
+        Inapoi
+       </button>
+    </div>
 
-    <button mat-raised-button type="submit" color="primary">
-     Save
-    </button>
-    <button mat-raised-button type="reset">
-      Cancel
-   </button>
-    <button mat-raised-button color = "primary" [routerLink] = "'/parts'">
-      Back to list
-    </button>
   </form>
 </div>
 

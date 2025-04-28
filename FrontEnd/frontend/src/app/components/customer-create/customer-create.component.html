@@ -1,46 +1,45 @@
 <H5>
-  Create customer:
+  Adauga un client:
 </H5>
 
 <div class = "mat-elevation-z2 p-2">
   <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
 
       <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Fill the surname</mat-label>
-        <input matInput placeholder="Doe" formControlName = "surname">
+        <mat-label>Nume</mat-label>
+        <input matInput placeholder="Popescu" formControlName = "surname">
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Fill the name</mat-label>
-        <input matInput placeholder="John" formControlName = "name">
+        <mat-label>Prenume</mat-label>
+        <input matInput placeholder="Ion" formControlName = "name">
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Fill the email</mat-label>
+        <mat-label>Email</mat-label>
         <input matInput placeholder="johndoe@gmail.com" formControlName = "email">
         <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="w-100">
-        <mat-label>Fill the phone</mat-label>
+        <mat-label>Numar/Numere de telefon</mat-label>
         <input matInput placeholder="+77 777 777 777" formControlName = "phone">
         <mat-icon matSuffix>phone</mat-icon>
-        <mat-hint>Use country prefix please</mat-hint>
       </mat-form-field>
 
       <div class = "buttons">
         <button mat-raised-button type="submit" color="primary">
-          Save
+          Adauga
         </button>
 
         <button mat-raised-button type="reset" >
-          Cancel
+          Reseteaza
         </button>
 
         <button  mat-raised-button color="primary" [routerLink] = "'/clients'">
-          Back to list
+          Inapoi
         </button>
       </div>
 

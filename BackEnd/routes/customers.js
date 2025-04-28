@@ -8,6 +8,9 @@ router.get('/', customerController.getAllCustomers);
 // GET: get by id
 router.get('/:id', customerController.getById);
 
+// get pt masinile clientului respectiv
+router.get('/:id/cars', customerController.getCarsOfCustomers);
+
 // POST: create
 router.post('/', customerController.create);
 

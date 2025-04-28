@@ -1,0 +1,74 @@
+<h5>
+  Adauga o masina:
+</h5>
+
+<div class = "mat-elevation-z2 p-2">
+
+  <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Firma</mat-label>
+      <input matInput placeHolder="Dacia" formControlName = "brand">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Model</mat-label>
+      <input matInput placeHolder="Logan" formControlName = "model">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>An fabricatie</mat-label>
+      <input matInput placeHolder="2015" formControlName = "yearOfManufacture">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Inmatriculat</mat-label>
+      <input matInput placeHolder="B123ABC" formControlName = "registrationNumber">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Serie sasiu</mat-label>
+      <input matInput placeHolder="LB390DCSD008" formControlName = "chassisSeries">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Tip motorizare</mat-label>
+      <mat-select formControlName = "engineType" >
+        <mat-option value="benzina">Benzina</mat-option>
+        <mat-option value="motorina">Motorina</mat-option>
+        <mat-option value="hibrid">Hibrid</mat-option>
+        <mat-option value="electric">Electric</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Capacitate motor</mat-label>
+      <input matInput placeHolder="1.8" formControlName = "engineCapacity">
+      <mat-hint> Doar numere, zecimale notate cu punct</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>Cai putere</mat-label>
+      <input matInput placeHolder="120" formControlName = "horsepower">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class = "w-100">
+      <mat-label>KiloWatts</mat-label>
+      <input matInput placeHolder="60" formControlName = "kw">
+      <mat-hint> Optional</mat-hint>
+    </mat-form-field>
+
+    <div class = "buttons">
+      <button mat-raised-button type="submit" color="primary">
+        Adauga
+      </button>
+
+      <button mat-raised-button type="reset" >
+        Reseteaza
+      </button>
+
+      <button  mat-raised-button color="primary" [routerLink] = "'/clients'">
+        Inapoi la lista
+      </button>
+    </div>
+
+  </form>
+</div>
