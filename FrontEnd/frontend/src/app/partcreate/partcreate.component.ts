@@ -40,7 +40,6 @@ export class PartcreateComponent implements OnInit{
   }
 
   onSubmit(){
-    //validate;
     if(this.form.valid){
       this.partService.post(this.form.value).subscribe(
         data => {

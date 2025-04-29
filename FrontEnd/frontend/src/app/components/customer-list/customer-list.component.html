@@ -2,15 +2,24 @@
   Lista clienti:
 </h3>
 
+<div class = "mat-elevation-z2 p-2 my-2 d-flex">
+  Pentru a accesa lista de masini a unui client apasati pe butonul de vizulizare.
+</div>
+
 <div *ngFor="let customer of customers" class = "mat-elevation-z2 p-2 my-2 d-flex align-items-center">
 
-  <div>
+  <div [ngStyle]="{ color: customer.isActive?'':'gray' , 'text-decoration': customer.isActive? 'none' : 'line-through'}">
     <label class = "fw-bold"> Nume: </label> {{customer.surname}}
     <label class = "fw-bold"> Prenume: </label> {{customer.name}}
     <label class = "fw-bold"> Telefon: </label> {{customer.phone}}
     <label class = "fw-bold"> Email: </label> {{customer.email}}
   </div>
   <div class="ms-auto" >
+    <button matt-icon-button color = "accent" (click)="toggleStatus(customer)">
+      <mat-icon>
+        {{ customer.isActive? 'check_circle' : 'block'}}
+      </mat-icon>
+    </button>
     <button matt-icon-button  [routerLink]="'/clients/edit/' + customer._id">
       <mat-icon>
         edit

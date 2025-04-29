@@ -46,10 +46,6 @@ export class CustomerDetailsComponent implements OnInit{
       }
   }
 
-  onCarCreated(newCar: Car) {
-
-  }
-
   deleteCar(carId: string){
     if(!confirm('Esti sigur ca vrei sa stergi masina din lista?')) return;
 

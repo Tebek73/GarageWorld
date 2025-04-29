@@ -36,4 +36,8 @@ export class CustomerService {
     return this.http.delete<Customer>(this.api + "/" + id);
   }
 
+  toggleStatus(id: string){
+    return this.http.patch<Customer>(this.api + "/" + id + "/status", {});
+  }
+
 }

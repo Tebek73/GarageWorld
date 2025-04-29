@@ -52,7 +52,7 @@ export class ServicehistoryComponent implements OnInit{
           this.fullHistory = next;
           //console.log(this.fullHistory);
           this.serviceHistory = this.fullHistory.find(
-            (sh) => sh.appointmentId._id === this.appointmentId
+            (sh) => sh.appointmentId?._id === this.appointmentId
           );
           if (this.serviceHistory) {
             this.form.patchValue(this.serviceHistory);

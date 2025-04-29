@@ -19,10 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './parts.component.scss'
 })
 export class PartsComponent implements OnInit{
-  //inject the part service
-  private partService = inject(PartService);
 
-  //customer list
+  private partService = inject(PartService);
 
   parts!: Part[]
 
@@ -43,7 +41,7 @@ export class PartsComponent implements OnInit{
   }
 
   onDeleteClick(part: Part){
-    if(window.confirm("Are you sure you want to delete: " + part.name + "?")){
+    if(window.confirm("Esti sigur/sigura ca vrei sa stergi " + part.name + "?")){
       this.partService.delete(part._id).subscribe(
         data => {
           this.initData();

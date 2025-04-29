@@ -9,7 +9,7 @@ export class Car {
   engineCapacity!: number;
   horsepower!: number;
   kw?: number;
-  ownerId?: string; // poate fi Customer sau doar id
+  ownerId?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }

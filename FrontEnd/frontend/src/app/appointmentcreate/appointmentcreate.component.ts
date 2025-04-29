@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppointmentService } from '../services/appointment.service';
-
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-appointmentcreate',
   imports: [
@@ -27,7 +27,8 @@ import { AppointmentService } from '../services/appointment.service';
     MatOptionModule,
     CommonModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   templateUrl: './appointmentcreate.component.html',
   styleUrl: './appointmentcreate.component.scss'
@@ -37,13 +38,11 @@ export class AppointmentcreateComponent implements OnInit{
   form!: FormGroup;
   customers: Customer[] = [];
   cars: Car[] = [];
-  //takenHours: string[] = [];
-  //isDateFull: boolean = false;
 
   private router = inject(Router);
   private customerService = inject(CustomerService);
-  private carService = inject(CarService);
   private appointmentService = inject(AppointmentService);
+  private snackBar = inject(MatSnackBar);
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -87,14 +86,17 @@ export class AppointmentcreateComponent implements OnInit{
       }
     );
   }
-  /*
-  checkAvailableHours(date: string): void{
-    //this.appointmentService.getAppointmentsByDate
-  }
-  */
+
   onSubmit(): void{
 
     if(this.form.valid){
+
+      const formData = {...this.form.value };
+
+      const rawDate = this.form.get('date')?.value;
+      const selectedDate = new Date(rawDate);
+      formData.date = selectedDate.toLocaleDateString('sv-SE');
+
       this.appointmentService.post(this.form.value).subscribe(
         data => {
           console.log('data posted');
@@ -102,6 +104,10 @@ export class AppointmentcreateComponent implements OnInit{
         },
         error => {
           console.log('error:',error);
+          this.snackBar.open('Ora aleasa este deja ocupata!', 'Inchide', {
+            duration: 4000,
+            panelClass: ['snackbar-warning']
+          });
         }
       );
     }

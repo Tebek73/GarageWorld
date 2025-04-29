@@ -6,7 +6,7 @@
     <label class="fw-bold">Nume client:</label> {{appointment.customer?.surname}} {{appointment.customer?.name}}
     <label class="fw-bold">Masina:</label> {{appointment.car?.brand}} {{appointment.car?.model}} {{appointment.car?.registrationNumber}}
     <label class="fw-bold">Metoda contact:</label>  {{appointment.contactMethod}}
-    <label class="fw-bold">Data:</label> {{appointment.date}}
+    <label class="fw-bold">Data:</label> {{appointment.date | date:'yyyy-MM-dd'}}
     <label class="fw-bold">Ora:</label> {{appointment.startHour}}
   </div>
   <div class="ms-auto" >

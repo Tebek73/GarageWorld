@@ -6,7 +6,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CustomerService } from '../../services/customer.service';
-import { Customer } from '../../models/customer.model';
 
 @Component({
   selector: 'app-customer-create',

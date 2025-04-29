@@ -35,9 +35,9 @@ export class ParteditComponent implements OnInit {
 
 
   ngOnInit(): void {
-     // get the customer from the url
+
     this.partId = this.activatedRouter.snapshot.params['id'];
-    // init the form
+
     this.form = new FormGroup({
       name: new FormControl('', Validators.required),
       partNumber: new FormControl('', Validators.required),
@@ -47,7 +47,6 @@ export class ParteditComponent implements OnInit {
     });
 
     if (this.partId) {
-      // get the cstomer info
       this.partService.getById(this.partId).subscribe(
         data => {
           this.part= data;
@@ -65,7 +64,7 @@ export class ParteditComponent implements OnInit {
 
 
   onSubmit(): void {
-    // validate the form
+
     if (this.form.valid) {
       this.partService.put(this.partId, this.form.value).subscribe(
         data => {

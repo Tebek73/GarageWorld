@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { Appointment } from '../models/appointment.model';
 import { AppointmentService } from '../services/appointment.service';
 import { CommonModule } from '@angular/common';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import {  MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-appointments',
@@ -40,7 +40,7 @@ export class AppointmentsComponent implements OnInit{
 
   onDeleteClick(appointment: Appointment){
 
-      if(window.confirm("Are you sure you want to delete this appointment ?")){
+      if(window.confirm("Esti sigur/sigura ca vrei sa stergi programarea?")){
         this.appointmentService.delete(appointment._id).subscribe(
           data => {
             this.initData();

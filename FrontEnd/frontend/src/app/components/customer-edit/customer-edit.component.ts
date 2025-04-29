@@ -5,7 +5,7 @@ import { Customer } from '../../models/customer.model';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -36,9 +36,7 @@ export class CustomerEditComponent {
 
 
   ngOnInit(): void {
-     // get the customer from the url
     this.customerId = this.activatedRouter.snapshot.params['id'];
-    // init the form
     this.form = new FormGroup({
       surname: new FormControl('',Validators.required),
       name: new FormControl('', Validators.required),
@@ -47,7 +45,6 @@ export class CustomerEditComponent {
     });
 
     if (this.customerId) {
-      // get the cstomer info
       this.customerService.getById(this.customerId).subscribe(
         data => {
           this.customer = data;
@@ -62,7 +59,6 @@ export class CustomerEditComponent {
   }
 
   onSubmit() {
-    // validate the form
     if (this.form.valid) {
       this.customerService.put(this.customerId, this.form.value).subscribe(
         data => {

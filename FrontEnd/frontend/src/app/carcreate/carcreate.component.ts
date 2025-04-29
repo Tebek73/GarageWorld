@@ -46,7 +46,14 @@ export class CarcreateComponent implements OnInit {
 
   onSubmit(){
     if(this.form.valid){
-      this.carService.post(this.form.value).subscribe(
+
+      const formData = {...this.form.value};
+
+      if(!formData.kw && formData.horsepower){
+        formData.kw = Math.round(formData.horsepower * 0.7355);
+      }
+
+      this.carService.post(formData).subscribe(
         data => {
           console.log('data posted');
           this.router.navigate(['/clients/details/',this.ownerId]);

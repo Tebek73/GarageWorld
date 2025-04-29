@@ -20,4 +20,7 @@ router.put('/:id', customerController.update);
 // DELETE: delete
 router.delete('/:id', customerController.deleteById);
 
+//activate/deactivate
+router.patch('/:id/status', customerController.toggleStatus);
+
 module.exports = router;
