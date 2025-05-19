@@ -1,4 +1,5 @@
 const Appointment = require('../models/Appointment');
+const serviceHistoryController = require('./ServiceHistoryController');
 
 const getAllAppointments = async (req,res) =>{
     try {
@@ -64,8 +65,16 @@ const update = async (req, res) => {
 const deleteById = async (req, res) => {
     try {
         const id = req.params.id;
+
+        await serviceHistoryController.deleteByAppointmentId(id);
+
         let deletedAppointment = await Appointment.deleteOne({ _id: id });
-        res.status(200).json(deletedAppointment);
+
+        if(!deletedAppointment){
+            return res.status(404).json({message: 'Appointment not found'});
+        }
+
+        res.status(200).json({message: 'Appointment and related service history deleted'});
     }
     catch (error) {
         res.status(500).json({ message: "An error occurred", error: error });

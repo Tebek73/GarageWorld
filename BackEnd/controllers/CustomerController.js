@@ -1,4 +1,5 @@
 const Customer = require('../models/Customer');
+const carController = require('./CarController');
 const Car = require('../models/Car');
 
 const getAllCustomers = async (req, res) => {
@@ -69,7 +70,15 @@ const update = async (req, res) => {
 const deleteById = async (req, res) => {
     try {
         const id = req.params.id;
+
+        await carController.deleteCarsOfCustomer(id);
+
         let deletedCustomer = await Customer.deleteOne({ _id: id });
+
+        if(!deletedCustomer){
+            return res.status(404).json({message: 'Customer not found'});
+        }
+
         res.status(200).json(deletedCustomer);
     }
     catch (error) {

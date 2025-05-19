@@ -62,10 +62,23 @@ const deleteById = async (req, res) => {
     }
 };
 
+const deleteByAppointmentId = async (appointmentId) => {
+    try{
+        const result = await ServiceHistory.deleteOne({ appointmentId: appointmentId});
+        console.log("Deleted history for appointment " + appointmentId);
+    }
+    catch(error){
+        console.log("Operation didn't work");
+        console.error(error);
+        throw error;
+    }
+}
+
 module.exports = {
     getAllHistory,
     create,
     update,
     getById,
-    deleteById
+    deleteById,
+    deleteByAppointmentId
 }; 

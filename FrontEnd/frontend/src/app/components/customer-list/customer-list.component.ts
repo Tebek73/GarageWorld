@@ -46,7 +46,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   onDeleteClick(customer: Customer){
-    if(window.confirm("Esti sigur/sigura ca vrei sa stergi clientul " + customer.name + "?")){
+    if(window.confirm("Esti sigur/sigura ca vrei sa stergi clientul " + customer.name + "?\nVerifica posibile programari active!")){
       this.customerService.delete(customer._id).subscribe(
         data => {
           this.initData();

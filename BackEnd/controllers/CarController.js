@@ -74,10 +74,22 @@ const deleteById = async (req, res) => {
     }
 };
 
+const deleteCarsOfCustomer = async (customerId) => {
+    try{
+        const result = await Car.deleteMany({ ownerId: customerId});
+        console.log("Deleted " + result.deletedCount + " cars of customer " + customerId);
+    }
+    catch(error){
+        console.error("Failed to delete cars because " + error);
+        throw error;
+    }
+};
+
 module.exports = {
     getAllCars,
     create,
     update,
     getById,
-    deleteById
+    deleteById,
+    deleteCarsOfCustomer
 }; 
