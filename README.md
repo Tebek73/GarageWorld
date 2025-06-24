@@ -27,8 +27,3 @@
 | Backend   | Node.js, Express.js    |
 | Database  | MongoDB                |
 | Tools     | Postman, npm, Git      |
-
-# Frontend setup
-cd ../FrontEnd
-npm install
-ng serve
